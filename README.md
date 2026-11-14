@@ -6,7 +6,7 @@ A trained breast-cancer classifier served as a REST API (Flask + gunicorn), pack
 | Deliverable | Where |
 |---|---|
 | Docker image definition | [`Dockerfile`](Dockerfile) |
-| Published Docker image | `ADD YOUR LINK HERE` (Docker Hub or ghcr.io, see the guide, section 6) |
+| Published Docker image | `ghcr.io/sarkarsoniya8-cmyk/ml-model-deployment:latest` (Docker Hub or ghcr.io, see the guide, section 6) |
 | Deployed API | `ADD YOUR SERVICE URL HERE` (see the guide, section 7) |
 | Deployment and API documentation | [`docs/deployment_guide.md`](docs/deployment_guide.md) |
 | API code | [`app/main.py`](app/main.py), model training in [`train.py`](train.py) |
@@ -15,7 +15,7 @@ A trained breast-cancer classifier served as a REST API (Flask + gunicorn), pack
 ## Quick start
 ```bash
 docker build -t breast-cancer-api:1.0 .
-docker run --rm -p 8080:8080 breast-cancer-api:1.0
+docker run --rm -p 8080:8080 ghcr.io/sarkarsoniya8-cmyk/ml-model-deployment:latest
 curl -X POST http://localhost:8080/predict -H "Content-Type: application/json" -d @examples/sample_malignant.json
 ```
 Expected response: `{"label": 1, "prediction": "malignant", "probability_malignant": 1.0}`
